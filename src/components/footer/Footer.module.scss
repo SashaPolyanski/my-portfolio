@@ -1,0 +1,62 @@
+@import "../../common/styles/sass/variables";
+@import "../../common/styles/sass/mixins";
+
+.mainBlock {
+  min-height: 300px;
+  @include flex(row, center, stretch, nowrap);
+
+  .footerContainer {
+    @include container();
+    @include flex(column, flex-start, center, nowrap);
+    padding: 50px 0;
+
+    .icons {
+      @include flex(row, space-between, center, nowrap);
+      width: 420px;
+      margin-top: 30px;
+
+      @media screen and (max-width: 505px) {
+        width: 100%;
+      }
+
+      .icon {
+        width: 60px;
+        height: 60px;
+        border: 1px solid $thirdColor;
+        border-radius: 50%;
+        color: $textColor;
+        background-color: $primaryColor;
+        @include flex(row, center, center, nowrap);
+
+        .img {
+          width: 60%;
+          height: 60%;
+
+          &:hover {
+            transform: rotate(360deg);
+            transition: all 0.6s ease-in-out 0s;
+          }
+        }
+
+        &:hover {
+          border: 1px solid $textColor;
+          background-color: #6ba9f5;
+          box-shadow: 0 0 13px 1px #6ba9f5;
+          transform: scale(1.2);
+          transition: all .1s ease-in-out 0s;
+        }
+
+        @media screen and (max-width: 500px) {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+
+    .copyright {
+      margin-top: 40px;
+      @include text($textFontFamily, 14px, 1.8, 300);
+      opacity: 0.5;
+    }
+  }
+}
