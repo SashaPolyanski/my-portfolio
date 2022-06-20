@@ -14,7 +14,7 @@ export const Contacts = () => {
         if (nameRef && nameRef.current && nameRef.current.value &&
             emailRef && emailRef.current && emailRef.current.value
             && messageRef && messageRef.current && messageRef.current.value) {
-            axios.post('http://localhost:3010/sendmessage', {
+            axios.post('https://smtp-server-for-mail.herokuapp.com/sendMessage', {
                 name: nameRef.current.value,
                 email: emailRef.current.value,
                 message: messageRef.current.value
